@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.headings {
+    text-align: center;
+}
+.middle-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.grid-container{
+    background: #FFFFFF67;
+    /* background: #E1E1E1; */
+    max-width: 78%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-wrap: wrap;
+    
+
+}
+.four-columns{
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 2px solid #FFFFFF97;
+}    

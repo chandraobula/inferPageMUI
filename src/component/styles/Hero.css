@@ -1,0 +1,15 @@
+/* @media(max-width:768px){
+    .LeftSection{
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+    }
+    .LeftSection img{
+        width: 100%;
+        height: auto;
+        scroll-snap-align: center;
+    }
+} */
+@import "react-slideshow-image/dist/styles.css";
