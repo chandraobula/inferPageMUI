@@ -1,14 +1,15 @@
 import React from "react";
-import { Button,TextField,Box,  Typography, Stack,useMediaQuery} from "@mui/material";
+import {TextField,Box,  Typography,useMediaQuery,Stack,Button} from "@mui/material";
 import { useState } from "react";
 import Logo from './Images/logo.svg';
 import './styles/SignUp.css';
+
 
 const SignUp = () =>{
  
   const InitialValues = {userName:"",mobile:"",email:"",password:"",confirmPassword:""}
   const[userData,setUserData] = useState(InitialValues);
-  // const [errors,setErrors] = useState({});
+  //const [errors,setErrors] = useState({});
 
   const isMobile = useMediaQuery('(max-width:600px)');
 
@@ -17,13 +18,7 @@ const SignUp = () =>{
     setUserData({...userData,[name]: value});
   };
   
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-    
-  // };
 
-  
-  
   return(
     <>
       <Box sx={{float:'right'}} padding={2}>
@@ -32,6 +27,7 @@ const SignUp = () =>{
       <Box my={10}>
         <Typography variant="h6"  textAlign='center' fontSize={40} fontWeight={'bold'}>SignUp</Typography>
         <Typography variant="subtitle1" textAlign={"center"} sx={{color:'#A7A7A7'}}> Welcome to infer</Typography>
+      
         <form>
           <Stack sx={{width:'80%'}} mx={6}>
               <TextField 
