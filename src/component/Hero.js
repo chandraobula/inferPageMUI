@@ -1,15 +1,13 @@
 import React ,{useState,useEffect} from "react";
 import {Typography,Grid,Stack, Box}from "@mui/material";
 import './styles/Hero.css';
-//import { Slide } from 'react-slideshow-image';
 import { Slideshow } from "../data/Data";
 import LeftSection from "./LeftSection";
-//import ListSubheader from '@mui/material/ListSubheader';
 import Logo from '../component/Images/logo.svg';
 import Tick from '../component/Images/tick.svg'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // import the carousel styles
-//import zIndex from "@mui/material/styles/zIndex";
+
 
 const Hero = () => {
   const [isMobile,setIsMobile] = useState(false);

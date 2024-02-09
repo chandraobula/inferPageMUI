@@ -1,0 +1,4 @@
+.active-link{
+    border-right: 3px solid blue; /* Vertical line on the right */
+    font-weight: bold;
+}

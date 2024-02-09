@@ -1,0 +1,12 @@
+.division{
+    display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto; /* Enable scrolling within this section */
+}
+@media screen and (max-width: 768px) {
+    .division {
+      height: 100%;
+      
+    }
+  }

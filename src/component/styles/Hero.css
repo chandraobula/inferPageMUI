@@ -12,4 +12,53 @@
         scroll-snap-align: center;
     }
 } */
-/* @import "react-slideshow-image/dist/styles.css"; */
+/* @import "react-slideshow-image/dist/styles.css"; *
+  
+  /* Pseudo-element for the blue mark at the right corner */
+.active{
+    color: blueviolet !important;
+    font-weight: bold !important;
+    /* border-right: 3px solid blue; */
+    
+  }
+  .icons{
+    display: flex;
+    text-decoration: none;
+
+  }
+  .Navlink {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+  }
+  
+  .Navlink li {
+    /* position: relative; */
+    margin-right: 15px;
+  }
+  
+  .Navlink a {
+    text-decoration: none;
+    color: rgba(167, 167, 167, 1);
+    position: relative;
+  }
+  
+  .Navlink a:after {
+    content: '';
+    display: block;
+    width: 0; /* Start with a width of 0 */
+    height: 2px;
+    background-color: rgba(167, 167, 167, 1);
+    position: absolute;
+    margin-right: 100%; /* Position it at the bottom of the link */
+    /* left: 0; */
+    transition: width 0.3s;
+  }
+  
+  .Navlink a.active:after {
+    width: 100%; /* Expand the width to cover the link's width when active */
+  }
+  
+  
+  

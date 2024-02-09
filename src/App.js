@@ -1,32 +1,32 @@
-import React from 'react';
-import Hero from './component/Hero';
-//import LeftSection from './component/LeftSection';
-//import SignUp from './component/SignUp';
-//import Register from './component/Register';
-import './component/styles/App.css';
-import { Grid } from '@mui/material';
-import Register1 from './component/Register1';
-//import Register from './component/Register';
-//import Logo from './component/Images/logo.svg';
-//import SignUp from './component/SignUp';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Saved from "./pages/Saved";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
+import Logout from "./pages/Logout";
+//import { createTheme } from "@mui/material/styles";
+import Division from "./Division";
+//import Register1 from "./pages/Register1";
+//import Navbar from "./component/Layout/Navbar";
 
 function App() {
   return (
     <div className="App">
-     
-      {/* <Stack > */}
-        <Grid container className='hello'>
-          <Grid className='left-section' item xs={12} md={8}  justifyContent={'center'} alignItems={'center'}>
-          <Hero/>
-          {/* <LeftSection/> */}
-          </Grid>
-          <Grid item xs={12} md={4} order={1}>
-            {/* <SignUp/> */}
-            {/* <Register/> */}
-            <Register1/>
-          </Grid>
-        </Grid>
-      {/* </Stack> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Division />}></Route>
+
+          {/* <Route path="/navbar" exact Component={<Navbar />}></Route> */}
+
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/saved" element={<Saved />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/settings" element={<Settings />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

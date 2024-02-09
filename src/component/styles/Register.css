@@ -1,136 +1,146 @@
-/* .container{
-    width: 80%;
-    margin-top: 1em;
-    background-color: burlywood;
-    align-items: center;
-    justify-content: center;
-}
-.top{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.heading{
-    text-align: center;
-}
-label{
-    display: block;
-    padding: 2% 0% 2% 0%;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* html {
-    font-family: 'Nunito', sans-serif;
-    font-size: 22px;
-    color: #fff;
-} */
-
-/* body {
-    min-height: 100vh; */
-    /* background-color: dodgerblue;
-} */
-
-
 .top {
-    width: 100%;
-    max-width: 420px;
-    min-height: 400px;
-    display: flex;
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  /* background-color: rgba(0,0,0,0.4); */
+}
+@media screen and (width: 768px) {
+  .top {
+    display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    /* background-color: rgba(0,0,0,0.4); */
-}
-.heading{
-    text-align: center;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    padding-bottom: 1rem;
+  }
 }
 
-a, a:visited {
-    color: #fff;
+.heading {
+  text-align: start;
+}
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
 }
 
+a,
+a:visited {
+  color: #fff;
+  color: #000;
+}
 
 input[type="text"],
 input[type="password"],
 button,
 textarea {
-    /* border-color: #CBCBCB; */
-  font-family: 'Nunito', sans-serif;
+  border-color: #cbcbcb;
+  font-family: "Nunito", sans-serif;
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
-
-label,
-button {
-   
-    display: block;
-    margin-top: 1rem;
+.textfield,
+textarea {
+  border-color: #cbcbcb;
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
 }
-
-button {
-    width: 100%;
+/* #username,#email,#mobile,#password,#confirm_pwd{
+    border-color: #CBCBCB;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+} */
+.label {
+  display: block;
+  margin-top: 0.5rem;
+}
+.button {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
   padding: 0.5rem;
-  background: linear-gradient(90.06deg, #FCD963 1%, #FCD172 54.43%, #FDAD72 107.86%);
-  border: #FDAD72;
+  background: linear-gradient(
+    90.06deg,
+    #fcd963 1%,
+    #fcd172 54.43%,
+    #fdad72 107.86%
+  );
+  border: #fdad72;
+  padding: 0.25rem;
+  border-radius: 0.3rem;
+  font-size: 22px;
 }
 
 .instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
 }
 
 .instructions > svg {
-    margin-right: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .offscreen {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .valid {
-    color: limegreen;
-    margin-left: 0.25rem;
+  color: limegreen;
+  margin-left: 0.25rem;
 }
 
 .invalid {
-    color: red;
-    margin-left: 0.25rem;
+  color: red;
+  margin-left: 0.25rem;
 }
 
 .errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .line {
-    display: inline-block;
+  display: inline-block;
+}
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.icon-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* Adjust this value based on your desired position */
+}
+
+/* Adjust the styles for the icons as needed */
+.icon-container .hide {
+  display: none;
 }
