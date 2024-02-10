@@ -5,12 +5,12 @@ import { Typography, Box, Grid } from "@mui/material";
 import { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 const Profile = () => {
-  const products = useSelector((state) => state.allProducts.product);
-  const { name, email, password } = products[0];
-  console.log(products);
+  // const products = useSelector((state) => state.allProducts.product);
+  // const { name, email, password } = products[0];
+  // console.log(products);
 
   const [avatarUrl, setAvatarUrl] = useState(""); // State to hold the avatar URL
   const inputRef = React.createRef(); // Reference to input element
@@ -131,7 +131,7 @@ const Profile = () => {
                 FULL NAME
               </Typography>
               <Typography fontWeight={600} sx={{ color: "#000" }}>
-                {userDataa.username} {name}
+                {userDataa.username}
                 <EditOutlinedIcon fontSize="small" sx={{ color: "blue" }} />
               </Typography>
               <Typography
@@ -144,7 +144,7 @@ const Profile = () => {
                 EMAIL
               </Typography>
               <Typography fontWeight={600} sx={{ color: "#000" }}>
-                {userDataa.email} {email}
+                {userDataa.email}
                 <EditOutlinedIcon fontSize="small" sx={{ color: "blue" }} />
               </Typography>
               <Typography
@@ -158,7 +158,7 @@ const Profile = () => {
               </Typography>
               <Typography fontWeight={600} sx={{ color: "#000" }}>
                 {userDataa.Password}
-                {password}
+
                 <EditOutlinedIcon fontSize="small" sx={{ color: "blue" }} />
               </Typography>
 

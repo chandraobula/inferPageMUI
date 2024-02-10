@@ -1,15 +1,21 @@
 import { ActionTypes } from "../constants/actionTypes";
 import axios from "../../../api/axios";
 
-export const fetchUser = (userId) => {
+export const fetchUser = () => {
   return async (dispatch) => {
     dispatch({ type: ActionTypes.FETCH_USER_REQUEST });
     try {
-      const response = await axios.get(`/getUser?userId=${userId}`);
+      console.log("contol near api");
+      const userId = sessionStorage.getItem("userId");
+      const response = await axios.get(`/getUser/${userId}`);
+      const userData = response.data;
+      console.log(userData);
       dispatch({
         type: ActionTypes.FETCH_USER_SUCCESS,
-        payload: response.data,
+        payload: userData,
+        //console.log(response.data);
       });
+      //console.log(response.data);
     } catch (error) {
       dispatch({
         type: ActionTypes.FETCH_USER_FAILURE,

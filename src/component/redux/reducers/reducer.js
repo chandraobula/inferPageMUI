@@ -1,16 +1,21 @@
 import { ActionTypes } from "../constants/actionTypes";
 
 const initialState = {
-  data: null,
+  userData: [],
   loading: false,
   error: null,
 };
-const reducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_USER_REQUEST:
       return { ...state, loading: true, error: null };
     case ActionTypes.FETCH_USER_SUCCESS:
-      return { ...state, loading: false, data: action.payload, error: null };
+      return {
+        ...state,
+        loading: false,
+        userData: action.payload,
+        error: null,
+      };
     case ActionTypes.FETCH_USER_FAILURE:
       return { ...state, loading: false, error: action.payload };
     // case ActionTypes.UPDATE_USER_REQUEST:
@@ -23,12 +28,4 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
-export default reducer;
-// export const reducer = (state = initialState, { type, payload }) => {
-//   switch (type) {
-//     case ActionTypes.SET_PRODUCTS:
-//       return state;
-//     default:
-//       return state;
-//   }
-// };
+export default userReducer;

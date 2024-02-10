@@ -9,6 +9,8 @@ import ErrorIcon from "@mui/icons-material/Error";
 import Logo from "../component/Images/logo.svg";
 import "../component/styles/Register.css";
 import GoogleIcon from "@mui/icons-material/Google";
+// import { useDispatch } from "react-redux";
+// import { fetchUser } from "../component/redux/Actions/actions";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -24,6 +26,7 @@ const Register1 = () => {
   const mobileRef = useRef();
   const errRef = useRef();
   const navigate = useNavigate();
+  //const dispatch = useDispatch();
 
   const [showLogin, setShowLogin] = useState(false);
 
@@ -50,7 +53,11 @@ const Register1 = () => {
   const [errMsg, setErrMsg] = useState("");
 
   //const [isLoading, setIsLoading] = useState(true);
-
+  // useEffect(() => {
+  //   //useRef.current.focus();
+  //   dispatch(fetchUser());
+  // }, [dispatch]);
+  // console.log("control here");
   useEffect(() => {
     userRef.current.focus();
   }, []);
@@ -126,7 +133,7 @@ const Register1 = () => {
     }
   };
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e, retry = false) => {
     e.preventDefault();
     try {
       const response = await axios.post(LOGIN_URL, { email, password: pwd });
@@ -144,11 +151,14 @@ const Register1 = () => {
       console.log("Login failed:", err);
       setErrMsg("Login Failed");
       errRef.current.focus();
-    }
 
-    setTimeout(() => {
-      (async () => await handleLogin())();
-    }, 2000);
+      if (retry) {
+        setTimeout(() => handleLogin(e), 2000);
+      }
+    }
+    // setTimeout(() => {
+    //   (async () => await handleLogin())();
+    // }, 2000);
   };
 
   return (
